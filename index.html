@@ -26,9 +26,80 @@
   </head>
 
   <body>
-    <h1 class="bg-primaryColor text-5xl text-white text-sans">
+    <!-- <h1 class="bg-primaryColor text-5xl text-white text-sans">
       tailwindcss main
-    </h1>
+    </h1> -->
+
+    <!-- header -->
+    <header class="w-full min-w-full" id="header">
+      <!-- hamburger menu -->
+      <button
+        class="laptop:hidden fixed cursor-pointer flex top-0 right-6 border-none rounded-full outline-none z-20"
+        id="hamburger-menu"
+      >
+        <i class="laptop:hidden fa-solid fa-bars text-5xl"></i>
+      </button>
+      <!-- end of hamburger menu -->
+      <!-- navigation -->
+      <nav
+        class="m-0 p-0 box-border flex flex-row items-center justify-center bg-yellow-400"
+        id="navbar"
+      >
+        <!-- TODO:icon  -->
+
+        <h1
+          class="w-1/2 text-primaryColor text-sans text-5xl font-light text-start ml-32"
+        >
+          Scene Stealers
+        </h1>
+
+        <ul class="flex w-1/2 flex-row justify-start list-none">
+          <li
+            class="ml-8 text-sans font-medium font-s text-2xl hover:text-3xl hover:underline text-accentColor"
+          >
+            <a
+              class="hidden text-primaryColor no-underline laptop:block"
+              href="#home"
+              id="linkHome"
+              >Home</a
+            >
+          </li>
+          <li
+            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-accentColor"
+          >
+            <a
+              class="hidden text-primaryColor no-underline laptop:block"
+              href="journal.html"
+              id="linkJournal"
+              >Journal</a
+            >
+          </li>
+          <li
+            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-accentColor"
+          >
+            <a
+              class="hidden text-primaryColor no-underline laptop:block"
+              href="#events"
+              id="linkEvents"
+              >Events</a
+            >
+          </li>
+          <li
+            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-accentColor"
+          >
+            <a
+              class="hidden text-primaryColor no-underline laptop:block"
+              href="#register"
+              id="linkRegister"
+              >Register</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- end of navigation -->
+    </header>
+    <!-- end of header -->
+
     <!-- script -->
     <script src="main.js"></script>
   </body>
