@@ -31,13 +31,22 @@
     </h1> -->
 
     <!-- header -->
-    <header class="w-full min-w-full">
+    <header class="w-full min-w-full" id="header">
+      <!-- hamburger menu -->
+      <button
+        class="laptop:hidden fixed cursor-pointer flex top-0 right-6 border-none rounded-full outline-none z-20"
+        id="hamburger-menu"
+      >
+        <i class="laptop:hidden fa-solid fa-bars text-5xl"></i>
+      </button>
+      <!-- end of hamburger menu -->
+      <!-- navigation -->
       <nav
         class="m-0 p-0 box-border flex flex-row items-center justify-center bg-yellow-400"
+        id="navbar"
       >
-        <!-- icon todo -->
+        <!-- TODO:icon  -->
 
-        <!-- navigation -->
         <h1
           class="w-1/2 text-primaryColor text-sans text-5xl font-light text-start ml-32"
         >
@@ -48,26 +57,40 @@
           <li
             class="ml-8 text-sans font-medium font-s text-2xl hover:text-3xl hover:underline text-accentColor"
           >
-            <a class="text-primaryColor no-underline" href="#home">Home</a>
+            <a
+              class="hidden text-primaryColor no-underline laptop:block"
+              href="#home"
+              id="linkHome"
+              >Home</a
+            >
           </li>
           <li
             class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-accentColor"
           >
-            <a class="text-primaryColor no-underline" href="journal.html"
+            <a
+              class="hidden text-primaryColor no-underline laptop:block"
+              href="journal.html"
+              id="linkJournal"
               >Journal</a
             >
           </li>
           <li
             class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-accentColor"
           >
-            <a class="text-primaryColor no-underline" href="#events"
-              >Movie Events</a
+            <a
+              class="hidden text-primaryColor no-underline laptop:block"
+              href="#events"
+              id="linkEvents"
+              >Events</a
             >
           </li>
           <li
             class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-accentColor"
           >
-            <a class="text-primaryColor no-underline" href="#register"
+            <a
+              class="hidden text-primaryColor no-underline laptop:block"
+              href="#register"
+              id="linkRegister"
               >Register</a
             >
           </li>
