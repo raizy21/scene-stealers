@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main</title>
+    <title>Journal</title>
     <!-- fav_icon  -->
-    <link rel="icon" type="image/png" href="src/images/favicon.svg" />
+    <link rel="icon" type="image/png" href="images/favicon.svg" />
+
     <!-- tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link rel="stylesheet" href="src/css/style.css" /> -->
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
 
     <!-- font ubuntu -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,70 +68,89 @@
     ></script>
   </head>
 
-  <!-- <h1 class="bg-primaryColor text-5xl text-white text-sans">
-    tailwindcss main
+  <!-- <h1 class="bg-secondaryColor text-5xl text-white text-sans">
+    tailwindcss journal
   </h1> -->
   <body class="bg-[#0e0023]">
     <!-- header -->
-    <header class="w-full min-w-full" id="header">
-      <!-- hamburger menu -->
-      <button
-        class="laptop:hidden fixed cursor-pointer flex top-0 right-6 border-none rounded-full outline-none z-20"
-        id="hamburger-menu"
-      >
-        <i class="laptop:hidden fa-solid fa-bars text-5xl"></i>
-      </button>
-      <!-- end of hamburger menu -->
-      <!-- navigation -->
+    <header class="w-full min-w-full">
       <nav
         class="m-0 p-0 box-border flex flex-row items-center justify-center bg-[#0e0023]"
-        id="navbar"
       >
-        <!-- TODO:icon  -->
+        <!-- icon todo -->
+        <img src="images/logo.svg" alt="Logo" class="w-3/6 lg:w-1/4 p-8" />
 
+        <!-- navigation -->
         <!-- <h1
-        class="w-1/2 text-white text-sans text-5xl font-light text-start ml-32"
+        class="hidden laptop:block w-1/2 text-primaryColor text-sans text-5xl font-light text-start ml-32"
       >
         Scene Stealers
       </h1> -->
-        <img src="src/images/logo.svg" alt="Logo" class="w-3/6 lg:w-1/4 p-8" />
 
-        <ul class="flex w-1/2 flex-row justify-start list-none">
+        <ul class="hidden laptop:flex w-1/2 flex-row justify-start list-none">
           <li
             class="ml-8 text-sans font-medium font-s text-2xl hover:text-3xl hover:underline text-white"
           >
-            <a
-              class="hidden text-white no-underline laptop:block"
-              href="index.html"
-              id="linkHome"
+            <a class="text-white no-underline" href="/scene-stealers/index.html"
               >Home</a
             >
           </li>
           <li
             class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
           >
-            <a
-              class="hidden text-white no-underline laptop:block"
-              href="src/journal.html"
-              id="linkJournal"
-              >Journal</a
-            >
+            <a class="text-white no-underline" href="/journal.html">Journal</a>
           </li>
           <li
             class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
           >
+            <a class="text-white no-underline" href="#events">Events</a>
+          </li>
+          <li
+            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
+          >
+            <a class="text-white no-underline" href="#register">Register</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- end of navigation -->
+
+      <!-- mobile navbar -->
+      <!-- navigation -->
+      <nav id="navbar-mobile" class="laptop:hidden">
+        <!-- TODO:icon  -->
+
+        <h1 class="text-sans text-5xl font-light mb-20 text-white">
+          Scene Stealers
+        </h1>
+
+        <ul class="text-white">
+          <li class="mt-[3rem]">
             <a
-              class="hidden text-white no-underline laptop:block"
+              class="text-4xl text-sans hover:underline hover:text-5xl"
+              href="/scene-stealers/index.html"
+              id="linkHome"
+              >Home</a
+            >
+          </li>
+          <li class="mt-[3rem]">
+            <a
+              class="text-4xl text-sans hover:underline hover:text-5xl"
+              href="journal.html"
+              id="linkJournal"
+              >Journal</a
+            >
+          </li>
+          <li class="mt-[3rem]">
+            <a
+              class="text-4xl text-sans hover:underline hover:text-5xl"
               href="#events"
               id="linkEvents"
               >Events</a
             >
           </li>
-          <li
-            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
-          >
+          <li class="mt-[3rem]">
             <a
-              class="hidden text-white no-underline laptop:block"
+              class="text-4xl text-sans hover:underline hover:text-5xl"
               href="#register"
               id="linkRegister"
               >Register</a
@@ -139,6 +159,28 @@
         </ul>
       </nav>
       <!-- end of navigation -->
+
+      <!-- hamburger menu -->
+      <button
+        class="laptop:hidden fixed cursor-pointer flex top-0 right-6 border-none rounded-full outline-none z-20"
+        id="hamburger-menu"
+      >
+        <i class="laptop:hidden fa-solid fa-bars text-5xl"></i>
+        <!-- <i class="laptop:hidden fa-solid fa-x text-5xl "></i> -->
+      </button>
+
+      <!-- exit button -->
+      <button
+        class="hidden fixed cursor-pointer top-0 right-6 border-none rounded-full outline-none z-20"
+        id="exit-hamburger-menu"
+      >
+        <i class="hidden fa-solid fa-x text-5xl"></i>
+      </button>
+
+      <!-- end of exit button -->
+
+      <!-- end of hamburger menu -->
+      <!-- end of mobile navbar -->
     </header>
     <!-- end of header -->
     <main>
@@ -151,12 +193,12 @@
       </section>
       <!-- container to display the movie-cards -->
       <section
-        id="movie-container"
+        id="favorites-container"
         class="flex flex-col justify-center items-center gap-8 px-16 py-24"
       >
         <h1 class="text-5xl text-white font-['Bungee']">Headline</h1>
         <div
-          id="movie-cards"
+          id="fav-movie-cards"
           class="grid grid-cols-2 gap-4 lg:grid-cols-4"
         ></div>
       </section>
@@ -164,7 +206,7 @@
     <!-- script -->
     <footer class="bg-[#a5b4fc] min-h-64 flex flex-col justify-between pt-20">
       <div class="flex items-center justify-between px-16 lg:px-28">
-        <img src="src/images/favicon.svg" alt="Logo" class="max-w-48" />
+        <img src="images/favicon.svg" alt="Logo" class="max-w-48" />
         <ul class="p-12 flex flex-col gap-2">
           <li class="font-bold text-lg font-['Bungee']">Navigation</li>
           <hr />
@@ -178,6 +220,6 @@
       </div>
       <p class="px-16 py-4 border-t text-center">© 2025 | SceneStealers</p>
     </footer>
-    <script src="src/main.js"></script>
+    <script src="journal.js"></script>
   </body>
 </html>
