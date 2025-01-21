@@ -1,4 +1,5 @@
-// console.log("journal.js");
+import tmdbService from './services/tmdbService.js';
+import config from './config.js';
 
 //selector
 const hamburger = document.querySelector("#hamburger-menu");
