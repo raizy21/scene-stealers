@@ -67,80 +67,79 @@
     ></script>
   </head>
 
-  <!-- <h1 class="bg-primaryColor text-5xl text-white text-sans">
-    tailwindcss main
-  </h1> -->
   <body class="bg-[#0e0023]">
     <!-- header -->
-    <header class="w-full min-w-full" id="header">
-      <!-- hamburger menu -->
-      <button
-        class="laptop:hidden fixed cursor-pointer flex top-0 right-6 border-none rounded-full outline-none z-20"
-        id="hamburger-menu"
-      >
-        <i class="laptop:hidden fa-solid fa-bars text-5xl"></i>
-      </button>
-      <!-- end of hamburger menu -->
+    <header
+      class="w-full min-w-full flex justify-center items-center py-6 px-8"
+      id="header"
+    >
+      <!-- logo -->
+      <div class="w-3/6 h-3/6 lg:w-1/4 p-8">
+        <img
+          src="src/images/logo.svg"
+          alt="Logo"
+          class="hover:scale-105 transition-all"
+        />
+      </div>
+      <!-- end of logo -->
+
       <!-- navigation -->
       <nav
-        class="m-0 p-0 box-border flex flex-row items-center justify-center bg-[#0e0023]"
+        class="hidden laptop:flex text-3xl items-center bg-[#0e0023] font-semibold ml-20"
         id="navbar"
       >
-        <!-- TODO:icon  -->
-
-        <!-- <h1
-        class="w-1/2 text-white text-sans text-5xl font-light text-start ml-32"
-      >
-        Scene Stealers
-      </h1> -->
-        <img src="src/images/logo.svg" alt="Logo" class="w-3/6 lg:w-1/4 p-8" />
-
-        <ul class="flex w-1/2 flex-row justify-start list-none">
+        <ul class="flex list-none">
           <li
-            class="ml-8 text-sans font-medium font-s text-2xl hover:text-3xl hover:underline text-white"
+            class="p-3 cursor-pointer hover:text-4xl hover:underline text-white"
           >
-            <a
-              class="hidden text-white no-underline laptop:block"
-              href="index.html"
-              id="linkHome"
-              >Home</a
-            >
+            <a class="no-underline" href="index.html" id="linkHome">Home</a>
           </li>
           <li
-            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
+            class="p-3 cursor-pointer hover:text-4xl hover:underline text-white"
           >
-            <a
-              class="hidden text-white no-underline laptop:block"
-              href="src/journal.html"
-              id="linkJournal"
+            <a class="no-underline" href="src/journal.html" id="linkJournal"
               >Journal</a
             >
           </li>
           <li
-            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
+            class="p-3 cursor-pointer hover:text-4xl hover:underline text-white"
           >
-            <a
-              class="hidden text-white no-underline laptop:block"
-              href="#events"
-              id="linkEvents"
-              >Events</a
-            >
+            <a class="no-underline" href="#events" id="linkEvents">Events</a>
           </li>
           <li
-            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
+            class="p-3 cursor-pointer hover:text-4xl hover:underline text-white"
           >
-            <a
-              class="hidden text-white no-underline laptop:block"
-              href="#register"
-              id="linkRegister"
+            <a class="no-underline" href="#register" id="linkRegister"
               >Register</a
             >
           </li>
         </ul>
       </nav>
       <!-- end of navigation -->
+
+      <!-- search item -->
+      <div class="relative hidden tablet:flex gap-2 ml-20">
+        <i
+          class="fa-solid fa-magnifying-glass text-secondaryColor mt-2 absolute left-3"
+        ></i>
+        <input
+          type="text"
+          placeholder="search..."
+          class="text-2xl pl-10 rounded-xl text-primaryColor"
+        />
+      </div>
+      <!-- end of search item -->
+
+      <!-- hamburger menu -->
+      <button class="block tablet:flex laptop:hidden ml-12" id="hamburger-menu">
+        <i
+          class="fa-solid fa-bars text-5xl text-primaryColor cursor-pointer"
+        ></i>
+      </button>
+      <!-- end of hamburger menu -->
     </header>
     <!-- end of header -->
+
     <main>
       <!-- Just a placeholder for hero-section -->
       <section
@@ -161,7 +160,7 @@
         ></div>
       </section>
     </main>
-    <!-- script -->
+    
     <footer class="bg-[#a5b4fc] min-h-64 flex flex-col justify-between pt-20">
       <div class="flex items-center justify-between px-16 lg:px-28">
         <img src="src/images/favicon.svg" alt="Logo" class="max-w-48" />
@@ -178,6 +177,8 @@
       </div>
       <p class="px-16 py-4 border-t text-center">© 2025 | SceneStealers</p>
     </footer>
+
+    <!-- script -->
     <script src="src/main.js"></script>
   </body>
 </html>
