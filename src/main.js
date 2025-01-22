@@ -112,7 +112,7 @@ exitBtn.addEventListener("click", () => {
   hamburger.classList.remove("hidden");
   exitBtn.classList.add("hidden");
 
-  //remove div 
+  //remove div
   if (divContainer !== null) {
     header.removeChild(divContainer);
   }
@@ -136,7 +136,7 @@ async function displayMovies() {
     movies.forEach((movie) => {
       const movieCard = document.createElement("div");
       movieCard.className =
-        "bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-all";
+        "bg-white rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-all flex flex-col justify-between";
 
       const movieImage = document.createElement("img");
       movieImage.className = "w-full h-auto";
@@ -176,7 +176,7 @@ async function displayMovies() {
           alert(`${movie.title} is already in your favorites!`);
           return;
         }
-        
+
         if (addToFavorites(movie)) {
           alert(`${movie.title} added to favorites!`);
         }
