@@ -91,19 +91,7 @@
           <li
             class="ml-8 text-sans font-medium font-s text-2xl hover:text-3xl hover:underline text-white"
           >
-            <a class="text-white no-underline" href="/scene-stealers/index.html"
-              >Home</a
-            >
-          </li>
-          <li
-            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
-          >
-            <a class="text-white no-underline" href="/journal.html">Journal</a>
-          </li>
-          <li
-            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
-          >
-            <a class="text-white no-underline" href="#events">Events</a>
+            <a class="text-white no-underline" href="../index.html">Home</a>
           </li>
           <li
             class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
@@ -127,25 +115,9 @@
           <li class="mt-[3rem]">
             <a
               class="text-4xl text-sans hover:underline hover:text-5xl"
-              href="/scene-stealers/index.html"
+              href="../index.html"
               id="linkHome"
               >Home</a
-            >
-          </li>
-          <li class="mt-[3rem]">
-            <a
-              class="text-4xl text-sans hover:underline hover:text-5xl"
-              href="journal.html"
-              id="linkJournal"
-              >Journal</a
-            >
-          </li>
-          <li class="mt-[3rem]">
-            <a
-              class="text-4xl text-sans hover:underline hover:text-5xl"
-              href="#events"
-              id="linkEvents"
-              >Events</a
             >
           </li>
           <li class="mt-[3rem]">
@@ -184,22 +156,31 @@
     </header>
     <!-- end of header -->
     <main>
-      <!-- Just a placeholder for hero-section -->
-      <section
-        id="hero"
-        class="bg-slate-200 min-h-96 flex flex-col justify-end px-16 pt-40 pb-12"
-      >
-        <div class="bg-[#a5b4fc] min-h-52 max-w-96 p-8"></div>
-      </section>
       <!-- container to display the movie-cards -->
       <section
         id="favorites-container"
         class="flex flex-col justify-center items-center gap-8 px-16 py-24"
       >
-        <h1 class="text-5xl text-white font-['Bungee']">Headline</h1>
+        <div class="flex items-center gap-4 mb-8">
+          <h1 id="view-title" class="text-5xl text-white font-['Bungee']">My Favorite Movies</h1>
+          <div class="flex items-center bg-white rounded-lg p-2">
+            <button 
+              id="favorites-btn" 
+              class="px-4 py-2 rounded-lg bg-primaryColor text-white"
+            >
+              Favorites
+            </button>
+            <button 
+              id="watchlist-btn" 
+              class="px-4 py-2 rounded-lg text-primaryColor"
+            >
+              Watchlist
+            </button>
+          </div>
+        </div>
         <div
           id="fav-movie-cards"
-          class="grid grid-cols-2 gap-4 lg:grid-cols-4"
+          class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
         ></div>
       </section>
     </main>
