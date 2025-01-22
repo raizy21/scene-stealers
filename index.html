@@ -88,7 +88,7 @@
         class="hidden laptop:flex text-3xl items-center bg-[#0e0023] font-semibold ml-20"
         id="navbar"
       >
-        <ul class="flex list-none">
+        <ul class="flex list-none" id="listItemsLink">
           <li
             class="p-3 cursor-pointer hover:text-4xl hover:underline text-white"
           >
@@ -137,6 +137,14 @@
         ></i>
       </button>
       <!-- end of hamburger menu -->
+
+      <!-- exit button -->
+      <button class="hidden ml-12" id="exit-btn">
+        <i class="fa-solid fa-x text-5xl text-primaryColor cursor-pointer"></i>
+
+        <!-- <i class="fa-solid fa-x"></i> -->
+      </button>
+      <!-- end of exit button -->
     </header>
     <!-- end of header -->
 
@@ -160,7 +168,7 @@
         ></div>
       </section>
     </main>
-    
+
     <footer class="bg-[#a5b4fc] min-h-64 flex flex-col justify-between pt-20">
       <div class="flex items-center justify-between px-16 lg:px-28">
         <img src="src/images/favicon.svg" alt="Logo" class="max-w-48" />
