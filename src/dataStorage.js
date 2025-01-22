@@ -10,7 +10,7 @@ export const addToFavorites = (movie) => {
 
 export const removeFromFavorites = (movieId) => {
   const favorites = getFavorites();
-  const updatedFavorites = favorites.filter(movie => movie.id !== movieId);
+  const updatedFavorites = favorites.filter((movie) => movie.id !== movieId);
   localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
 };
 
@@ -20,7 +20,7 @@ export const getFavorites = () => {
 
 export const isInFavorites = (movieId) => {
   const favorites = getFavorites();
-  return favorites.some(movie => movie.id === movieId);
+  return favorites.some((movie) => movie.id === movieId);
 };
 
 export const saveMovieReview = (movieId, review) => {
@@ -46,11 +46,11 @@ export const getWatchlist = () => {
 
 export const isInWatchlist = (movieId) => {
   const watchlist = getWatchlist();
-  return watchlist.some(movie => movie.id === movieId);
+  return watchlist.some((movie) => movie.id === movieId);
 };
 
 export const removeFromWatchlist = (movieId) => {
   const watchlist = getWatchlist();
-  const updatedWatchlist = watchlist.filter(movie => movie.id !== movieId);
+  const updatedWatchlist = watchlist.filter((movie) => movie.id !== movieId);
   localStorage.setItem("watchlist", JSON.stringify(updatedWatchlist));
 };

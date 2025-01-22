@@ -1,6 +1,11 @@
 import tmdbService from "./services/tmdbService.js";
 import config from "./config.js";
-import { addToFavorites, isInFavorites } from "./dataStorage.js";
+import {
+  addToFavorites,
+  addToWatchlist,
+  isInFavorites,
+  isInWatchlist,
+} from "./dataStorage.js";
 
 //selector
 const hamburger = document.querySelector("#hamburger-menu");
@@ -162,14 +167,29 @@ async function displayMovies() {
 
       const btnContainer = document.createElement("div");
       btnContainer.className =
-        "flex justify-end items-center bg-[#a5b4fc] z-50 px-4 py-2";
+        "flex gap-1 justify-end items-center bg-[#a5b4fc] z-50 px-4 py-2";
 
       const heart = document.createElement("img");
       heart.className = "w-8";
       heart.src = "src/images/heart-regular.svg";
 
+      if (isInFavorites(movie.id)) {
+        heart.src = "src/images/heart-solid.svg";
+      }
+
+      const save = document.createElement("img");
+      save.className = "w-6";
+      save.src = "src/images/bookmark-regular.svg";
+
+      if (isInWatchlist(movie.id)) {
+        save.src = "src/images/bookmark-solid.svg";
+      }
+
       const favBtn = document.createElement("a");
-      favBtn.className = " px-4 py-2 rounded-lg text-white cursor-pointer";
+      favBtn.className = "py-2 rounded-lg text-white cursor-pointer";
+
+      const saveBtn = document.createElement("a");
+      saveBtn.className = "px-4 py-2 rounded-lg text-white cursor-pointer";
 
       favBtn.addEventListener("click", () => {
         if (isInFavorites(movie.id)) {
@@ -178,11 +198,26 @@ async function displayMovies() {
         }
 
         if (addToFavorites(movie)) {
+          heart.src = "src/images/heart-solid.svg";
           alert(`${movie.title} added to favorites!`);
         }
       });
 
+      saveBtn.addEventListener("click", () => {
+        if (isInWatchlist(movie.id)) {
+          alert(`${movie.title} is already in your watchlist!`);
+          return;
+        }
+
+        if (addToWatchlist(movie)) {
+          save.src = "src/images/bookmark-solid.svg";
+          alert(`${movie.title} added to your watchlist!`);
+        }
+      });
+
       favBtn.appendChild(heart);
+      saveBtn.appendChild(save);
+      btnContainer.appendChild(saveBtn);
       btnContainer.appendChild(favBtn);
 
       movieDetails.appendChild(movieTitle);
