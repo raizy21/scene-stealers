@@ -4,42 +4,117 @@ import { addToFavorites } from "./dataStorage.js";
 
 //selector
 const hamburger = document.querySelector("#hamburger-menu");
+const exitBtn = document.querySelector("#exit-btn");
 const header = document.querySelector("#header");
+const navbar = document.querySelector("#navbar");
+const listItemsLink = document.querySelector("#listItemsLink");
+const linkHome = document.querySelector("#linkHome");
+const linkJournal = document.querySelector("#linkJournal");
+const linkEvents = document.querySelector("#linkEvents");
+const linkRegister = document.querySelector("#linkRegister");
+let divContainer;
 
 //hamburger click
 hamburger.addEventListener("click", () => {
   // console.log("clicked");
+
   // document.querySelector(".navigation").classList.toggle("change");
 
-  const navbar = document.querySelector("#navbar");
+  //make a container for links
+  divContainer = document.createElement("div");
+  divContainer.setAttribute("id", "divContainer");
+  divContainer.className =
+    "absolute w-full h-full top-[7rem] bg-secondaryColor";
 
-  //links
-  const linkHome = document.querySelector("#linkHome");
-  const linkJournal = document.querySelector("#linkJournal");
-  const linkEvents = document.querySelector("#linkEvents");
-  const linkRegister = document.querySelector("#linkRegister");
+  //show the navbar
+  navbar.classList.remove("hidden", "laptop:flex");
+  navbar.classList.add("flex", "flex-col");
 
-  if (linkHome.style.display === "none") {
-    navbar.classList.add("flex-col");
+  //styling the links
+  linkHome.className =
+    "text-primaryColor mt-12 text-4xl flex justify-center items-center hover:text-5xl hover:underline";
+  linkJournal.className =
+    "text-primaryColor mt-12 text-4xl flex justify-center items-center  hover:text-5xl hover:underline";
+  linkEvents.className =
+    "text-primaryColor mt-12 text-4xl flex justify-center items-center  hover:text-5xl hover:underline";
+  linkRegister.className =
+    "text-primaryColor mt-12 text-4xl flex justify-center items-center  hover:text-5xl hover:underline";
 
-    //display links
-    linkHome.style.display = "block";
-    linkJournal.style.display = "block";
-    linkEvents.style.display = "block";
-    linkRegister.style.display = "block";
+  //hide the hamburger menu and show the exit buttons
+  hamburger.classList.add("hidden");
+  exitBtn.classList.remove("hidden");
 
-    hamburger.style.display = "none";
-  } else {
-    navbar.classList.remove("flex-col");
-    navbar.classList.add("flex-row", "items-center", "justify-center");
+  // append links
+  divContainer.appendChild(linkHome);
+  divContainer.appendChild(linkJournal);
+  divContainer.appendChild(linkEvents);
+  divContainer.appendChild(linkRegister);
 
-    //hide links
-    linkHome.style.display = "none";
-    linkJournal.style.display = "none";
-    linkEvents.style.display = "none";
-    linkRegister.style.display = "none";
+  //append to header container
+  header.appendChild(divContainer);
+});
 
-    hamburger.style.display = "block";
+//exit btn click
+exitBtn.addEventListener("click", () => {
+  // console.log("clicked");
+
+  // document.querySelector(".navigation").classList.toggle("change");
+
+  //show the navbar
+  navbar.classList.add("hidden", "laptop:flex");
+  navbar.classList.remove("flex", "flex-col");
+
+  //styling the links
+  linkHome.classList.remove(
+    "text-primaryColor",
+    "mt-12",
+    "text-4xl",
+    "flex",
+    "justify-center",
+    "items-center",
+    "hover:text-5xl",
+    "hover:underline"
+  );
+
+  linkJournal.classList.remove(
+    "text-primaryColor",
+    "mt-12",
+    "text-4xl",
+    "flex",
+    "justify-center",
+    "items-center",
+    "hover:text-5xl",
+    "hover:underline"
+  );
+  linkEvents.classList.remove(
+    "text-primaryColor",
+    "mt-12",
+    "text-4xl",
+    "flex",
+    "justify-center",
+    "items-center",
+    "hover:text-5xl",
+    "hover:underline"
+  );
+
+  linkRegister.classList.remove(
+    "text-primaryColor",
+    "mt-12",
+    "text-4xl",
+    "flex",
+    "justify-center",
+    "items-center",
+    "hover:text-5xl",
+    "hover:underline"
+  );
+
+  //hide the exit button and show the hamburger
+  hamburger.classList.remove("hidden");
+  exitBtn.classList.add("hidden");
+
+  //remove div 
+  if (divContainer !== null) {
+    header.removeChild(divContainer);
   }
 });
 
