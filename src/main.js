@@ -1,6 +1,6 @@
 import tmdbService from "./services/tmdbService.js";
 import config from "./config.js";
-import { addToFavorites } from "./dataStorage.js";
+import { addToFavorites, isInFavorites } from "./dataStorage.js";
 
 //selector
 const hamburger = document.querySelector("#hamburger-menu");
@@ -97,8 +97,14 @@ async function displayMovies() {
       favBtn.className = " px-4 py-2 rounded-lg text-white cursor-pointer";
 
       favBtn.addEventListener("click", () => {
-        addToFavorites(movie);
-        alert(`${movie.title} added to favorites!`);
+        if (isInFavorites(movie.id)) {
+          alert(`${movie.title} is already in your favorites!`);
+          return;
+        }
+        
+        if (addToFavorites(movie)) {
+          alert(`${movie.title} added to favorites!`);
+        }
       });
 
       favBtn.appendChild(heart);
