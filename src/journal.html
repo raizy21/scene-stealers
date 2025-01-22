@@ -162,16 +162,18 @@
         class="flex flex-col justify-center items-center gap-8 px-16 py-24"
       >
         <div class="flex items-center gap-4 mb-8">
-          <h1 id="view-title" class="text-5xl text-white font-['Bungee']">My Favorite Movies</h1>
+          <h1 id="view-title" class="text-5xl text-white font-['Bungee']">
+            My Favorite Movies
+          </h1>
           <div class="flex items-center bg-white rounded-lg p-2">
-            <button 
-              id="favorites-btn" 
+            <button
+              id="favorites-btn"
               class="px-4 py-2 rounded-lg bg-primaryColor text-white"
             >
               Favorites
             </button>
-            <button 
-              id="watchlist-btn" 
+            <button
+              id="watchlist-btn"
               class="px-4 py-2 rounded-lg text-primaryColor"
             >
               Watchlist
@@ -186,20 +188,83 @@
     </main>
     <!-- script -->
     <footer class="bg-[#a5b4fc] min-h-64 flex flex-col justify-between pt-20">
-      <div class="flex items-center justify-between px-16 lg:px-28">
-        <img src="images/favicon.svg" alt="Logo" class="max-w-48" />
+      <div class="flex items-start justify-between px-16 lg:px-28">
+        <img src="src/images/logo-footer.png" alt="Logo" class="max-w-48" />
         <ul class="p-12 flex flex-col gap-2">
-          <li class="font-bold text-lg font-['Bungee']">Navigation</li>
+          <li class="font-bold text-lg font-['Bungee'] text-[#4845d2]">
+            Navigation
+          </li>
           <hr />
-          <li><a href="src/journal.html">Journal</a></li>
-          <li><a href="#">Imprint</a></li>
+          <li>
+            <a href="src/journal.html" class="text-white font-bold text-lg"
+              >Journal</a
+            >
+          </li>
+          <li><a href="#" class="text-white font-bold text-lg">Imprint</a></li>
         </ul>
         <ul class="p-12 flex flex-col gap-2">
-          <li class="font-bold text-lg font-['Bungee']">Social Media</li>
+          <li class="font-bold text-lg font-['Bungee'] text-[#4845d2]">
+            Social Media
+          </li>
           <hr />
+          <li>
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <a href="#"
+                ><img
+                  src="/scene-stealers/src/images/instagram-brands-solid.svg"
+                  alt="Instagram"
+                  class="w-8"
+              /></a>
+              <a href="#"
+                ><img
+                  src="/scene-stealers/src/images/linkedin-brands-solid.svg"
+                  alt="LinkedIn"
+                  class="w-8"
+              /></a>
+              <a href="#"
+                ><img
+                  src="/scene-stealers/src/images/square-x-twitter-brands-solid.svg"
+                  alt="X"
+                  class="w-8"
+              /></a>
+              <a href="#"
+                ><img
+                  src="/scene-stealers/src/images/square-youtube-brands-solid.svg"
+                  alt="YouTube"
+                  class="w-8"
+              /></a>
+            </div>
+          </li>
+        </ul>
+        <ul class="p-12 flex flex-col gap-2">
+          <li class="font-bold text-lg font-['Bungee'] text-[#4845d2]">
+            Partners
+          </li>
+          <hr />
+          <li>
+            <div class="flex justify-items-center items-center p-2 gap-4">
+              <a href="#"
+                ><img
+                  src="/scene-stealers/src/images/trust1.svg"
+                  alt="placeholder"
+              /></a>
+              <a href="#"
+                ><img
+                  src="/scene-stealers/src/images/trust2.svg"
+                  alt="placeholder"
+              /></a>
+              <a href="#"
+                ><img
+                  src="/scene-stealers/src/images/trust3.svg"
+                  alt="placeholder"
+              /></a>
+            </div>
+          </li>
         </ul>
       </div>
-      <p class="px-16 py-4 border-t text-center">© 2025 | SceneStealers</p>
+      <p class="px-16 py-4 border-t text-center text-[#4845d2]">
+        © 2025 | SceneStealers
+      </p>
     </footer>
     <script src="journal.js" type="module"></script>
   </body>
