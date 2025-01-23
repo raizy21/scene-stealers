@@ -11,13 +11,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <link rel="stylesheet" href="css/style.css" /> -->
 
-    <!-- font ubuntu -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    /> -->
     <!-- Fonts: Lato for text and Bungee for headlines -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,22 +32,6 @@
             fontFamily: {
               sans: ["Lato", "system-ui"],
             },
-            screens: {
-              sm: "640px",
-              // => @media (min-width: 640px) { ... }
-
-              tablet: "768px",
-              // => @media (min-width: 	768px) { ... }
-
-              miniLaptop: "900px",
-              // => @media (min-width: 900px) { ... }
-
-              laptop: "1024px",
-              // => @media (min-width: 1024px) { ... }
-
-              desktop: "1280px",
-              // => @media (min-width: 1280px) { ... }
-            },
           },
         },
         plugins: [],
@@ -68,99 +45,19 @@
     ></script>
   </head>
 
-  <!-- <h1 class="bg-secondaryColor text-5xl text-white text-sans">
-    tailwindcss journal
-  </h1> -->
   <body class="bg-[#0e0023]">
     <!-- header -->
     <header class="w-full min-w-full">
-      <nav
-        class="m-0 p-0 box-border flex flex-row items-center justify-center bg-[#0e0023]"
-      >
-        <!-- icon todo -->
-        <img src="images/logo.svg" alt="Logo" class="w-3/6 lg:w-1/4 p-8" />
-
-        <!-- navigation -->
-        <!-- <h1
-        class="hidden laptop:block w-1/2 text-primaryColor text-sans text-5xl font-light text-start ml-32"
-      >
-        Scene Stealers
-      </h1> -->
-
-        <ul class="hidden laptop:flex w-1/2 flex-row justify-start list-none">
-          <li
-            class="ml-8 text-sans font-medium font-s text-2xl hover:text-3xl hover:underline text-white"
-          >
-            <a class="text-white no-underline" href="../index.html">Home</a>
-          </li>
-          <li
-            class="ml-8 text-sans font-medium text-2xl hover:text-3xl hover:underline text-white"
-          >
-            <a class="text-white no-underline" href="#register">Register</a>
-          </li>
-        </ul>
+      <nav class="m-0 p-0 box-border flex flex-row items-center justify-center bg-[#0e0023] px-8 py-4">
+        <a href="../index.html" class="w-64 md:w-80 hover:scale-105 transition-all">
+          <img src="images/logo.svg" alt="Logo" class="w-full h-auto" />
+        </a>
       </nav>
-      <!-- end of navigation -->
-
-      <!-- mobile navbar -->
-      <!-- navigation -->
-      <nav id="navbar-mobile" class="laptop:hidden">
-        <!-- TODO:icon  -->
-
-        <h1 class="text-sans text-5xl font-light mb-20 text-white">
-          Scene Stealers
-        </h1>
-
-        <ul class="text-white">
-          <li class="mt-[3rem]">
-            <a
-              class="text-4xl text-sans hover:underline hover:text-5xl"
-              href="../index.html"
-              id="linkHome"
-              >Home</a
-            >
-          </li>
-          <li class="mt-[3rem]">
-            <a
-              class="text-4xl text-sans hover:underline hover:text-5xl"
-              href="#register"
-              id="linkRegister"
-              >Register</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <!-- end of navigation -->
-
-      <!-- hamburger menu -->
-      <button
-        class="laptop:hidden fixed cursor-pointer flex top-0 right-6 border-none rounded-full outline-none z-20"
-        id="hamburger-menu"
-      >
-        <i class="laptop:hidden fa-solid fa-bars text-5xl"></i>
-        <!-- <i class="laptop:hidden fa-solid fa-x text-5xl "></i> -->
-      </button>
-
-      <!-- exit button -->
-      <button
-        class="hidden fixed cursor-pointer top-0 right-6 border-none rounded-full outline-none z-20"
-        id="exit-hamburger-menu"
-      >
-        <i class="hidden fa-solid fa-x text-5xl"></i>
-      </button>
-
-      <!-- end of exit button -->
-
-      <!-- end of hamburger menu -->
-      <!-- end of mobile navbar -->
     </header>
-    <!-- end of header -->
+
     <main>
       <!-- container to display the movie-cards -->
-      <section
-        id="favorites-container"
-        class="flex flex-col justify-center items-center gap-8 px-16 py-24"
-      >
+      <section id="favorites-container" class="flex flex-col justify-center items-center gap-8 px-16 py-24">
         <div class="flex items-center gap-4 mb-8">
           <h1 id="view-title" class="text-5xl text-white font-['Bungee']">
             My Favorite Movies
@@ -186,7 +83,7 @@
         ></div>
       </section>
     </main>
-    <!-- script -->
+
     <footer class="bg-[#a5b4fc] min-h-64 flex flex-col justify-between pt-20">
       <div class="flex items-start justify-between px-16 lg:px-28">
         <img src="images/logo-footer.png" alt="Logo" class="max-w-48" />
