@@ -9,9 +9,11 @@
     <!-- tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <link rel="stylesheet" href="src/css/style.css" /> -->
-     <!-- Add Animate.css for animations -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
+    <!-- Add Animate.css for animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <!-- font ubuntu -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -153,21 +155,22 @@
       <!-- end of exit button -->
     </header>
     <!-- end of header -->
- <!-- Just a placeholder for hero-section -->
- <section id="hero" class=bg-[#a5b4fc] min-h-screen flex flex-col justify-end px-16 pt-32 pb-8 mt-[-60px]">
-  <div id="hero-content" class="relative w-full h-full"></div> <!-- Ensure this exists -->
-</section>
 
-
+    <section
+      id="hero"
+      class="bg-gradient-to-b from-[#a5b4fc] to-[#0e0023] flex flex-col justify-end px-16 pt-24 pb-16"
+    >
+      <div id="hero-content" class="w-full h-full"></div>
+      <!-- Ensure this exists -->
+    </section>
 
     <main>
-     
       <!-- container to display the movie-cards -->
       <section
         id="movie-container"
         class="flex flex-col justify-center items-center gap-8 px-16 py-24"
       >
-        <h1 class="text-5xl text-white font-['Bungee']">Headline</h1>
+        <h1 class="text-5xl text-white font-['Bungee'] py-8">Popular movies</h1>
         <div
           id="movie-cards"
           class="grid grid-cols-2 gap-4 lg:grid-cols-4"
@@ -175,7 +178,9 @@
       </section>
     </main>
 
-    <footer class="bg-[#a5b4fc] min-h-64 flex flex-col justify-between pt-20">
+    <footer
+      class="bg-gradient-to-tr from-[#a5b4fc] to-[#706ed7] min-h-64 flex flex-col justify-between pt-20 border-t"
+    >
       <div class="flex items-start justify-between px-16 lg:px-28">
         <img src="src/images/logo-footer.png" alt="Logo" class="max-w-48" />
         <ul class="p-12 flex flex-col gap-2">
@@ -188,6 +193,8 @@
               >Journal</a
             >
           </li>
+          <li><a href="#" class="text-white font-bold text-lg">Events</a></li>
+          <li><a href="#" class="text-white font-bold text-lg">Register</a></li>
           <li><a href="#" class="text-white font-bold text-lg">Imprint</a></li>
         </ul>
         <ul class="p-12 flex flex-col gap-2">
