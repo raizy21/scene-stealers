@@ -326,3 +326,116 @@ async function displayMovies() {
 
 // Initialize the movie display on page load
 displayMovies();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const heroContainer = document.getElementById("hero-content");
+
+  // Create animated header
+  const header = document.createElement("h1");
+  header.textContent = "Welcome to SceneStealers";
+  header.classList.add("text-5xl", "text-white", "font-['Bungee']", "opacity-0", "translate-y-12");
+  heroContainer.appendChild(header);
+
+  // Apply fade-in animation with delay
+  setTimeout(() => {
+    header.classList.remove("opacity-0", "translate-y-12");
+    header.classList.add("transition-all", "duration-1000", "opacity-100", "translate-y-0");
+  }, 300);
+
+  // Create animated subheading
+  const subheading = document.createElement("p");
+  subheading.textContent = "Discover the latest movies, trending stars, and all things cinema!";
+  subheading.classList.add("text-xl", "text-white", "mt-4", "opacity-0", "translate-y-12");
+  heroContainer.appendChild(subheading);
+
+  // Apply fade-in animation with delay
+  setTimeout(() => {
+    subheading.classList.remove("opacity-0", "translate-y-12");
+    subheading.classList.add("transition-all", "duration-1000", "opacity-100", "translate-y-0");
+  }, 600);
+
+  // Add movie details (Posters and Titles)
+  const movieContainer = document.createElement("div");
+  movieContainer.classList.add("relative", "w-full", "h-96", "overflow-hidden");
+  heroContainer.appendChild(movieContainer);
+
+  // Movie Data (Use relative paths for images)
+  const movies = [
+    {
+      title: "Mufasa: The Lion King",
+      description: "Fortsetzung zu Disneys Realfilm-Remake Der König der Löwen von 2019. Mufasa: The Lion King wird von Barry Jenkins inszeniert.",
+      poster: "src/images/poster/mufasa.png"
+    },
+    {
+      title: "Kraven the Hunter",
+      description: "Sergei Kravinoff leidet unter der komplexen Beziehung zu seinem kaltherzigen und skrupellosen Vater.",
+      poster: "src/images/poster/kraven.png"
+    },
+    {
+      title: "Venom: The Last Dance",
+      description: "Der Reporter Eddie Brock und Venom sind auf der Flucht vor dem Gesetz und einer geheimen Spezialeinheit des US-Militärs.",
+      poster: "src/images/poster/venom.png"
+    }
+  ];
+
+  // Create movie cards for the slideshow
+  movies.forEach((movie, index) => {
+    const movieCard = document.createElement("div");
+    movieCard.classList.add("absolute", "w-full", "h-full", "opacity-0", "transform", "transition-all", "duration-1000");
+    movieCard.setAttribute("data-index", index);
+    movieContainer.appendChild(movieCard);
+
+    const movieImage = document.createElement("img");
+    movieImage.src = movie.poster;
+    movieImage.alt = `${movie.title} Poster`;
+    movieImage.classList.add("w-full", "h-full", "object-cover", "rounded-lg");
+    movieCard.appendChild(movieImage);
+
+    const movieTitle = document.createElement("h2");
+    movieTitle.textContent = movie.title;
+    movieTitle.classList.add("absolute", "bottom-10", "left-10", "text-white", "text-2xl", "font-bold", "opacity-0", "translate-y-12");
+    movieCard.appendChild(movieTitle);
+
+    const movieDescription = document.createElement("p");
+    movieDescription.textContent = movie.description;
+    movieDescription.classList.add("absolute", "bottom-4", "left-10", "text-white", "text-sm", "opacity-0", "translate-y-12");
+    movieCard.appendChild(movieDescription);
+  });
+
+  // Function to animate the slideshow
+  let currentSlide = 0;
+  const totalSlides = movies.length;
+  
+  const showSlide = (index) => {
+    const slides = document.querySelectorAll("[data-index]");
+    slides.forEach((slide, idx) => {
+      if (idx === index) {
+        slide.classList.remove("opacity-0", "translate-y-12");
+        slide.classList.add("opacity-100", "translate-y-0", "transition-all", "duration-1000");
+      } else {
+        slide.classList.remove("opacity-100", "translate-y-0");
+        slide.classList.add("opacity-0", "translate-y-12", "transition-all", "duration-1000");
+      }
+    });
+
+    // Animate the text
+    const title = slides[index].querySelector("h2");
+    const description = slides[index].querySelector("p");
+
+    title.classList.remove("opacity-0", "translate-y-12");
+    title.classList.add("opacity-100", "translate-y-0", "transition-all", "duration-1000");
+
+    description.classList.remove("opacity-0", "translate-y-12");
+    description.classList.add("opacity-100", "translate-y-0", "transition-all", "duration-1000");
+  };
+
+  // Initial slide
+  showSlide(currentSlide);
+
+  // Set up the slideshow transition every 3 seconds
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }, 3000);  // Change slide every 3 seconds
+});
