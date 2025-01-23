@@ -327,32 +327,55 @@ async function displayMovies() {
 // Initialize the movie display on page load
 displayMovies();
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const heroContainer = document.getElementById("hero-content");
 
   // Create animated header
   const header = document.createElement("h1");
   header.textContent = "Welcome to SceneStealers";
-  header.classList.add("text-5xl", "text-white", "font-['Bungee']", "opacity-0", "translate-y-12");
+  header.classList.add(
+    "text-6xl",
+    "text-white",
+    "font-['Bungee']",
+    "opacity-0",
+    "translate-y-12"
+  );
   heroContainer.appendChild(header);
 
   // Apply fade-in animation with delay
   setTimeout(() => {
     header.classList.remove("opacity-0", "translate-y-12");
-    header.classList.add("transition-all", "duration-1000", "opacity-100", "translate-y-0");
+    header.classList.add(
+      "transition-all",
+      "duration-1000",
+      "opacity-100",
+      "translate-y-0"
+    );
   }, 300);
 
   // Create animated subheading
   const subheading = document.createElement("p");
-  subheading.textContent = "Discover the latest movies, trending stars, and all things cinema!";
-  subheading.classList.add("text-xl", "text-white", "mt-4", "opacity-0", "translate-y-12");
+  subheading.textContent =
+    "Discover the latest movies, trending stars, and all things cinema!";
+  subheading.classList.add(
+    "text-xl",
+    "text-white",
+    "mt-4",
+    "mb-8",
+    "opacity-0",
+    "translate-y-12"
+  );
   heroContainer.appendChild(subheading);
 
   // Apply fade-in animation with delay
   setTimeout(() => {
     subheading.classList.remove("opacity-0", "translate-y-12");
-    subheading.classList.add("transition-all", "duration-1000", "opacity-100", "translate-y-0");
+    subheading.classList.add(
+      "transition-all",
+      "duration-1000",
+      "opacity-100",
+      "translate-y-0"
+    );
   }, 600);
 
   // Add movie details (Posters and Titles)
@@ -364,25 +387,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const movies = [
     {
       title: "Mufasa: The Lion King",
-      description: "Fortsetzung zu Disneys Realfilm-Remake Der König der Löwen von 2019. Mufasa: The Lion King wird von Barry Jenkins inszeniert.",
-      poster: "src/images/poster/mufasa.png"
+      description:
+        "Fortsetzung zu Disneys Realfilm-Remake Der König der Löwen von 2019. Mufasa: The Lion King wird von Barry Jenkins inszeniert.",
+      poster: "src/images/poster/mufasa.png",
     },
     {
       title: "Kraven the Hunter",
-      description: "Sergei Kravinoff leidet unter der komplexen Beziehung zu seinem kaltherzigen und skrupellosen Vater.",
-      poster: "src/images/poster/kraven.png"
+      description:
+        "Sergei Kravinoff leidet unter der komplexen Beziehung zu seinem kaltherzigen und skrupellosen Vater.",
+      poster: "src/images/poster/kraven.png",
     },
     {
       title: "Venom: The Last Dance",
-      description: "Der Reporter Eddie Brock und Venom sind auf der Flucht vor dem Gesetz und einer geheimen Spezialeinheit des US-Militärs.",
-      poster: "src/images/poster/venom.png"
-    }
+      description:
+        "Der Reporter Eddie Brock und Venom sind auf der Flucht vor dem Gesetz und einer geheimen Spezialeinheit des US-Militärs.",
+      poster: "src/images/poster/venom.png",
+    },
   ];
 
   // Create movie cards for the slideshow
   movies.forEach((movie, index) => {
     const movieCard = document.createElement("div");
-    movieCard.classList.add("absolute", "w-full", "h-full", "opacity-0", "transform", "transition-all", "duration-1000");
+    movieCard.classList.add(
+      "absolute",
+      "w-full",
+      "h-full",
+      "opacity-0",
+      "transform",
+      "transition-all",
+      "duration-1000"
+    );
     movieCard.setAttribute("data-index", index);
     movieContainer.appendChild(movieCard);
 
@@ -394,28 +428,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const movieTitle = document.createElement("h2");
     movieTitle.textContent = movie.title;
-    movieTitle.classList.add("absolute", "bottom-10", "left-10", "text-white", "text-2xl", "font-bold", "opacity-0", "translate-y-12");
+    movieTitle.classList.add(
+      "absolute",
+      "bottom-10",
+      "left-10",
+      "text-white",
+      "text-2xl",
+      "font-bold",
+      "opacity-0",
+      "translate-y-12"
+    );
     movieCard.appendChild(movieTitle);
 
     const movieDescription = document.createElement("p");
     movieDescription.textContent = movie.description;
-    movieDescription.classList.add("absolute", "bottom-4", "left-10", "text-white", "text-sm", "opacity-0", "translate-y-12");
+    movieDescription.classList.add(
+      "absolute",
+      "bottom-4",
+      "left-10",
+      "text-white",
+      "text-sm",
+      "opacity-0",
+      "translate-y-12"
+    );
     movieCard.appendChild(movieDescription);
   });
 
   // Function to animate the slideshow
   let currentSlide = 0;
   const totalSlides = movies.length;
-  
+
   const showSlide = (index) => {
     const slides = document.querySelectorAll("[data-index]");
     slides.forEach((slide, idx) => {
       if (idx === index) {
         slide.classList.remove("opacity-0", "translate-y-12");
-        slide.classList.add("opacity-100", "translate-y-0", "transition-all", "duration-1000");
+        slide.classList.add(
+          "opacity-100",
+          "translate-y-0",
+          "transition-all",
+          "duration-1000"
+        );
       } else {
         slide.classList.remove("opacity-100", "translate-y-0");
-        slide.classList.add("opacity-0", "translate-y-12", "transition-all", "duration-1000");
+        slide.classList.add(
+          "opacity-0",
+          "translate-y-12",
+          "transition-all",
+          "duration-1000"
+        );
       }
     });
 
@@ -424,10 +485,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const description = slides[index].querySelector("p");
 
     title.classList.remove("opacity-0", "translate-y-12");
-    title.classList.add("opacity-100", "translate-y-0", "transition-all", "duration-1000");
+    title.classList.add(
+      "opacity-100",
+      "translate-y-0",
+      "transition-all",
+      "duration-1000"
+    );
 
     description.classList.remove("opacity-0", "translate-y-12");
-    description.classList.add("opacity-100", "translate-y-0", "transition-all", "duration-1000");
+    description.classList.add(
+      "opacity-100",
+      "translate-y-0",
+      "transition-all",
+      "duration-1000"
+    );
   };
 
   // Initial slide
@@ -437,5 +508,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(() => {
     currentSlide = (currentSlide + 1) % totalSlides;
     showSlide(currentSlide);
-  }, 3000);  // Change slide every 3 seconds
+  }, 3000); // Change slide every 3 seconds
 });
