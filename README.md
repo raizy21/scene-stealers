@@ -1,6 +1,6 @@
 # scene-stealers
 
-A small code of movie fetch api [scene-stealers](https://developer.themoviedb.org/docs/getting-started), based on working with fetch api [search api](https://developer.themoviedb.org/reference/search-movie).
+A code of movie fetch api [scene-stealers](https://developer.themoviedb.org/docs/getting-started), based on working with fetch api [movie api](https://developer.themoviedb.org/reference/search-movie) and [search api](https://developer.themoviedb.org/reference/search-movie).
 
 Made just for fun. [Play it here!](https://raizy21.github.io/scene-stealers/)
 
